@@ -28,15 +28,18 @@ MODEL = "gpt-4o-2024-08-06"
 
 # One entry per subscale: (key used in reasoning_prompts/reversed_scales,
 # Pydantic response model mirroring the questionnaire, number of items,
-# label used for the output column). Adding a subscale means adding one
-# row here instead of copy-pasting a new try/except block.
+# output column label, inner per-row dict key). The label and inner key
+# are kept separate on purpose: the original script used two different
+# strings for several subscales (e.g. outer "interest enjoyment" vs. inner
+# "Interest_enjoyment"), and `compute averages.py` parses rows by looking
+# for that exact inner key — changing it would silently break that script.
 SUBSCALES = [
-    ("Interest_enjoyment", InterestEnjoyment, 7, "interest enjoyment"),
-    ("Perceived_competence", PerceivedCompetence, 6, "perceived competence"),
-    ("Effort_importance", EffortImportance, 6, "Effort importance"),
-    ("Pressure_tension", PressureTension, 5, "Pressure Tension"),
-    ("Perceived_choice", PerceivedChoice, 7, "Perceived choice"),
-    ("Value_usefulness", ValueUsefulness, 4, "Value Usefulness"),
+    ("Interest_enjoyment", InterestEnjoyment, 7, "interest enjoyment", "Interest_enjoyment"),
+    ("Perceived_competence", PerceivedCompetence, 6, "perceived competence", "Perceived competence"),
+    ("Effort_importance", EffortImportance, 6, "Effort importance", "Effort importance"),
+    ("Pressure_tension", PressureTension, 5, "Pressure Tension", "Pressure tension"),
+    ("Perceived_choice", PerceivedChoice, 7, "Perceived choice", "Perceived choice"),
+    ("Value_usefulness", ValueUsefulness, 4, "Value Usefulness", "Value Usefulness"),
 ]
 
 
@@ -108,10 +111,10 @@ def process_data(df):
         row_data = row.iloc[1:].tolist()
         subscale_results = {"Index": index}
 
-        for subscale_key, response_model, n_questions, column_label in SUBSCALES:
+        for subscale_key, response_model, n_questions, column_label, inner_key in SUBSCALES:
             try:
                 answers = score_subscale(client, row_data, subscale_key, response_model, n_questions)
-                subscale_results[column_label] = [{"Index": index, column_label: answers}]
+                subscale_results[column_label] = [{"Index": index, inner_key: answers}]
                 print(f"Row {index}, {subscale_key}: {answers}")
             except (json.JSONDecodeError, ValidationError) as e:
                 print(f"Row {index}, {subscale_key}: could not parse/validate response ({e})")
