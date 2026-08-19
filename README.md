@@ -79,13 +79,13 @@ The analysis focuses on six IMI subscales:
 
 LLM predictions showed varying degrees of correspondence with participant self-reports across the six motivational dimensions.
 
-IMI subscale	Spearman’s ρ	MAE
-Interest / Enjoyment	0.80	0.77
-Value / Usefulness	0.62	0.77
-Perceived Choice	0.57	0.97
-Perceived Competence	0.50	0.68
-Effort	0.43	0.87
-Pressure / Tension	0.34	1.24
+    IMI subscale	Spearman’s ρ	MAE
+    Interest / Enjoyment	0.80	0.77
+    Value / Usefulness	0.62	0.77
+    Perceived Choice	0.57	0.97
+    Perceived Competence	0.50	0.68
+    Effort	0.43	0.87
+    Pressure / Tension	0.34	1.24
 
 The strongest correspondence was observed for Interest / Enjoyment, while Pressure / Tension showed the weakest association and highest prediction error.
 
