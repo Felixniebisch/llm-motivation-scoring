@@ -49,7 +49,7 @@ The analysis follows a simple pipeline:
         ├── Mean Absolute Error
         └── Prediction bias
     
-    ## Model
+## Model
 
 * Model: GPT-4-turbo
 * Interface: OpenAI API
