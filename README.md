@@ -18,7 +18,7 @@ This repository contains the code and prompt logic for a research project invest
 
 | File | Purpose |
 |------|---------|
-| `PoC - main script.py` | Main control script: loops over participants, prompts GPT-4, saves predictions |
+| `main.py` | Main control script: loops over participants, prompts GPT-4, saves predictions |
 | `initialization_prompt.py` | Sets up initialization/system prompt using LangGPT-style multilevel design |
 | `compute_averages.py` | Aggregates responses and applies scoring logic |
 | `reversed_scales.py` | Handles subscale items that are reverse-coded |
