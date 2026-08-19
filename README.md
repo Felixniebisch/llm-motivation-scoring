@@ -1,4 +1,4 @@
-Recognizing Intrinsic Motivation through LLM Processing
+# Recognizing Intrinsic Motivation through LLM Processing
 
 Can large language models infer intrinsic motivation from natural language?
 
@@ -8,7 +8,7 @@ The project combines LLM-based text analysis, prompt engineering, psychometric m
 
 ⸻
 
-Research question
+## Research question
 
 Can an LLM infer psychological constructs that are typically measured through standardized self-report questionnaires?
 
@@ -20,7 +20,7 @@ Rather than treating the LLM output as a standalone classification, the project 
 
 ⸻
 
-Method
+## Method
 
 The analysis follows a simple pipeline:
 
@@ -49,7 +49,7 @@ Comparison with participant self-report
     ├── Mean Absolute Error
     └── Prediction bias
 
-Model
+## Model
 
 * Model: GPT-4-turbo
 * Interface: OpenAI API
@@ -58,7 +58,7 @@ Model
 * Prompting: Structured prompt design with reasoning-based scoring
 * Validation: Comparison against IMI self-report scores
 
-Participants
+## Participants
 
 N = 245 participants
 
@@ -75,7 +75,7 @@ The analysis focuses on six IMI subscales:
 
 ⸻
 
-Results
+## Results
 
 LLM predictions showed varying degrees of correspondence with participant self-reports across the six motivational dimensions.
 
@@ -93,7 +93,7 @@ These differences suggest that some motivational dimensions may be more readily 
 
 ⸻
 
-Repository structure
+## Repository structure
 
 File	Purpose
 main.py	Main analysis loop; sends participant responses to the LLM and stores predictions
@@ -105,7 +105,7 @@ PydanticClasses.py	Validates structured LLM responses
 
 ⸻
 
-Installation
+### Installation
 
 Requires Python 3.11+.
 
@@ -117,7 +117,7 @@ OPENAI_API_KEY=your_api_key
 
 ⸻
 
-Research context
+### Research context
 
 The project is based on Self-Determination Theory and the Intrinsic Motivation Inventory (IMI).
 
@@ -133,7 +133,7 @@ IEEE Transactions on Affective Computing
 
 ⸻
 
-Limitations
+### Limitations
 
 LLM-derived scores should not be interpreted as replacements for validated psychological measurement.
 
@@ -147,11 +147,11 @@ The results therefore reflect both the information contained in the participants
 
 ⸻
 
-Citation
+### Citation
 
 If you use this code or methodology, please cite the associated research publication.
 
 Felix Niebisch & Loïs Vanhee
 Automatically Identifying Motivation From Text
 
-[Add publication / preprint link]
+
