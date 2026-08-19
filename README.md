@@ -79,13 +79,14 @@ The analysis focuses on six IMI subscales:
 
 LLM predictions showed varying degrees of correspondence with participant self-reports across the six motivational dimensions.
 
-    IMI subscale	Spearman’s ρ	MAE
-    Interest / Enjoyment	0.80	0.77
-    Value / Usefulness	0.62	0.77
-    Perceived Choice	0.57	0.97
-    Perceived Competence	0.50	0.68
-    Effort	0.43	0.87
-    Pressure / Tension	0.34	1.24
+| IMI Subscale | Spearman's ρ | Mean Absolute Error |
+|---|---:|---:|
+| Interest / Enjoyment | **0.80** | 0.77 |
+| Value / Usefulness | **0.62** | 0.77 |
+| Perceived Choice | **0.57** | 0.97 |
+| Perceived Competence | **0.50** | 0.68 |
+| Effort | **0.43** | 0.87 |
+| Pressure / Tension | **0.34** | 1.24 |
 
 The strongest correspondence was observed for Interest / Enjoyment, while Pressure / Tension showed the weakest association and highest prediction error.
 
@@ -95,13 +96,14 @@ These differences suggest that some motivational dimensions may be more readily 
 
 ## Repository structure
 
-File	Purpose
-main.py	Main analysis loop; sends participant responses to the LLM and stores predictions
-initialization_prompt.py	Defines the structured initialization/system prompt
-reasoning_prompts.py	Contains scoring prompts used for the IMI dimensions
-compute_averages.py	Aggregates item-level predictions into subscale scores
-reversed_scales.py	Handles reverse-coded IMI items
-PydanticClasses.py	Validates structured LLM responses
+| Component | Purpose |
+|---|---|
+| `main.py` | Main analysis pipeline and LLM inference |
+| `initialization_prompt.py` | System-level instructions for the LLM |
+| `reasoning_prompts.py` | Scoring prompts for the individual IMI dimensions |
+| `compute_averages.py` | Aggregation of item-level predictions into IMI subscale scores |
+| `reversed_scales.py` | Reverse-scoring of negatively keyed IMI items |
+| `PydanticClasses.py` | Structured output schemas and response validation |
 
 ⸻
 
@@ -109,11 +111,11 @@ PydanticClasses.py	Validates structured LLM responses
 
 Requires Python 3.11+.
 
-pip install openai pandas numpy scipy statsmodels pydantic python-dotenv
+    pip install openai pandas numpy scipy statsmodels pydantic python-dotenv
 
 Set your OpenAI API key as an environment variable:
 
-OPENAI_API_KEY=your_api_key
+    OPENAI_API_KEY=your_api_key
 
 ⸻
 
