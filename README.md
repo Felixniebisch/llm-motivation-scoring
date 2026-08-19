@@ -24,32 +24,32 @@ Rather than treating the LLM output as a standalone classification, the project 
 
 The analysis follows a simple pipeline:
 
-Participant
-    │
-    ▼
-Open-ended activity description
-    │
-    ▼
-LLM-based scoring
-    │
-    ├── Interest / Enjoyment
-    ├── Perceived Competence
-    ├── Effort
-    ├── Value / Usefulness
-    ├── Pressure / Tension
-    └── Perceived Choice
-    │
-    ▼
-Predicted IMI scores (1–7)
-    │
-    ▼
-Comparison with participant self-report
-    │
-    ├── Spearman's ρ
-    ├── Mean Absolute Error
-    └── Prediction bias
-
-## Model
+    Participant
+        │
+        ▼
+    Open-ended activity description
+        │
+        ▼
+    LLM-based scoring
+        │
+        ├── Interest / Enjoyment
+        ├── Perceived Competence
+        ├── Effort
+        ├── Value / Usefulness
+        ├── Pressure / Tension
+        └── Perceived Choice
+        │
+        ▼
+    Predicted IMI scores (1–7)
+        │
+        ▼
+    Comparison with participant self-report
+        │
+        ├── Spearman's ρ
+        ├── Mean Absolute Error
+        └── Prediction bias
+    
+    ## Model
 
 * Model: GPT-4-turbo
 * Interface: OpenAI API
