@@ -39,9 +39,9 @@ def subscale_mean_frame(data, source_column, inner_key, mean_column):
     row-wise mean. Returns (frame, mean_column) or (empty_frame, None) if
     there was nothing valid to parse."""
     parsed = data[source_column].apply(lambda cell: extract_subscale(cell, inner_key))
-    # A row that failed to parse yields None rather than a dict; pandas
+    # A row that failed to parse yields None rather than a dict. Pandas
     # can't build a DataFrame from a list mixing dicts and None (it raises
-    # TypeError), so failed rows become an empty dict instead — they end up
+    # TypeError), so failed rows become an empty dict instead they end up
     # as an all-NaN row, which is what "no valid data for this row" should
     # look like, instead of taking down the whole script.
     safe_parsed = parsed.apply(lambda v: v if isinstance(v, dict) else {})
